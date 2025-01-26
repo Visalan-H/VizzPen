@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import MyIframe from '../../Components/myIframe'
+import MyIframe from '../../Components/MyIframe/MyIframe'
 import './Full.css'
 import { useParams } from 'react-router-dom'
 import axios from 'axios'
@@ -15,7 +15,6 @@ const Full = () => {
       await axios.get(`${import.meta.env.VITE_BASE_URL}/pen/${id}`)
         .then((res) => setPen(res.data))
         .then(() => setLoading(false))
-        .catch((err) => console.log(err))
     }
     meow()
   }

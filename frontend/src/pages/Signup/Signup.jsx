@@ -21,7 +21,6 @@ const Signup = () => {
                 withCredentials: true,
             })
             .then(() => nav('/'))
-            .catch((err) => console.log(err))
     }
 
     return (

@@ -3,7 +3,7 @@ import Loading from '../../Components/Loading/Loading'
 import axios from 'axios'
 import './Home.css'
 import { useNavigate } from 'react-router-dom'
-import MyIframe from '../../Components/myIframe'
+import MyIframe from '../../Components/MyIframe/MyIframe.jsx'
 
 const Home = ({ user }) => {
 
@@ -30,7 +30,6 @@ const Home = ({ user }) => {
   let back = ''
   const nav = useNavigate();
   const id = user._id;
-  console.log(id);
   const [pens, setPens] = useState([]);
   const [loading, setLoading] = useState(true);
 
