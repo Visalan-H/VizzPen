@@ -22,3 +22,6 @@ a{
     text-underline-offset: 4px;
     color: #d1d1d1;
 }
+html{
+    scrollbar-width: thin;
+}

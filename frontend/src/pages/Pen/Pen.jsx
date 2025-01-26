@@ -3,6 +3,7 @@ import CodeBox from '../../Components/CodeBox/CodeBox'
 import { useState } from 'react'
 import Header from '../../Components/Header/Header'
 import MyIframe from '../../Components/myIframe'
+import {ToastContainer,toast} from 'react-toastify'
 import './Pen.css'
 import { useParams,useNavigate } from 'react-router-dom'
 import AbsButton from '../../Components/AbsButton/AbsButton'
@@ -91,6 +92,7 @@ const Pen = ({ user }) => {
         .then(res => {
           setPenId(res.data._id)
         })
+        .then(()=>toast("💖 Pen Saved"))
     }
   }
   const handleToggle = () => {
@@ -134,6 +136,17 @@ const Pen = ({ user }) => {
 
   return (
     <div className='pen_main'>
+      <ToastContainer
+        position="top-center"
+        autoClose={3000}
+        
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick={false}
+        pauseOnFocusLoss
+        draggable
+        theme="dark"
+      />
       <Header toggle={headerVisible} handleSave={handleSave} name={user.name} handleDownload={handleDownload} />
       <div className="top" ref={topRef} style={{ height: topHeight }}>
         <CodeBox Name="html" language="xml" value={html} onChange={setHtml} icon="html5" ic="#E34F26" />
@@ -149,7 +162,7 @@ const Pen = ({ user }) => {
       <AbsButton top="270px" title='Full View' onClick={handleFullView} state={true} icons={{ "true": "up-right-from-square" }} />
       {nameVisible && <div className="nameInput">
         <i className='fa fa-x' onClick={() => setNameVisible(false)}></i>
-        <label htmlFor="namein">Name this Pen</label>
+        <label htmlFor="namein">Name this Pen <span>(Close when you're done)</span></label>
         <input type="text" value={name} onChange={(e) => setName(e.target.value)} placeholder='Name of the Pen' id='namein' />
       </div>}
     </div>

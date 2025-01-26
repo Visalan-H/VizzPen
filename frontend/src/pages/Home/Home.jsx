@@ -51,6 +51,7 @@ const Home = ({ user }) => {
   return (
     <div className='main_home'>
       <h1>{`Welcome ${back}! ${user.name}`}</h1>
+      <h3>Your Pens</h3>
       <div className="pens_container">
         {pens.map((pen, i) => (
           <div className="iframecontainer" onClick={()=>nav(`/pen/${pen._id}`)}>

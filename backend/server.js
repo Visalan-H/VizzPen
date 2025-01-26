@@ -27,4 +27,3 @@ mongoose.connect(MONGO_URL)
         console.error("error while connecting to mongodb", err);
 
     })
-

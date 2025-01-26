@@ -39,10 +39,10 @@
 }
 
 
-.CodeMirror,
-.react-codemirror2 {
+/* .CodeMirror,
+.react-codemirror2,.editor {
     height: 100% !important;
-}
+} */
 
 .codebox_main:not(.codebox_main:last-of-type) .body {
     padding-right: 15px;
@@ -60,10 +60,13 @@
 }
 
 .codebox_main .body {
-    flex: 1;
     height: 100%;
     overflow-x: hidden;
     white-space: normal;
     word-wrap: break-word;
     text-wrap: wrap;
+}
+
+.monaco-list-rows > *{
+    text-decoration: none !important;
 }

@@ -24,7 +24,6 @@
 .bottom iframe {
     width: 100%;
     margin-top: 15px;
-    /* pointer-events:none; */
     height: 100%;
     border: 0;
 }
@@ -37,7 +36,8 @@
     left: 0;
     z-index: 3;
     background-color: black;
-    cursor: row-resize;
+    cursor: row-resize !important;
+    border-bottom: 1px solid white;
 }
 
 
@@ -89,6 +89,10 @@
     border-radius: 8px;
     padding: 16px 8px;
     outline: 0;
+}
+.nameInput span{
+    font-size: 14px;
+    color: #999;
 }
 
 @keyframes slidein {
