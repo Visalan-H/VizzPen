@@ -24,7 +24,7 @@ const Pen = ({ user }) => {
   const [name, setName] = useState('');
   const topRef = useRef();
 
-  if (user) {
+  if (user && pen) {
     if (user._id !== pen.user) return <h1>Not yours</h1>
   }
 
