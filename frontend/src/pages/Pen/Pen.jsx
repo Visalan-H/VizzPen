@@ -24,16 +24,6 @@ const Pen = ({ user }) => {
   const [name, setName] = useState('');
   const topRef = useRef();
 
-  if (user && pen && pen.user) {
-    console.log("User ID:", user._id);
-    console.log("Pen User:", pen.user);
-
-    if (user._id != pen.user) return <h1>Not yours</h1>;
-  }
-
-
-
-
   useEffect(() => {
     if (penId) {
       navigate(`/pen/${penId}`);
@@ -148,6 +138,9 @@ const Pen = ({ user }) => {
     window.addEventListener('mousemove', handleMouseMove);
     window.addEventListener('mouseup', stopResize);
   };
+  if (user && pen && pen.user) {
+    if (user._id != pen.user) return <h1>Not yours</h1>;
+  }
 
   return (
     <div className='pen_main'>
