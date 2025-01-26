@@ -24,6 +24,9 @@ const Pen = ({ user }) => {
   const [name, setName] = useState('');
   const topRef = useRef();
 
+  if(user._id !== pen.user) return <h1>Not yours</h1>
+  
+
   useEffect(() => {
     if (penId) {
       navigate(`/pen/${penId}`);
