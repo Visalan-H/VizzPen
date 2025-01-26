@@ -1,0 +1,69 @@
+.codebox_main {
+    display: flex;
+    flex-direction: column;
+    overflow-y: visible;
+    overflow-x: hidden;
+    scrollbar-width: none;
+    min-width: 130px;
+    position: relative;
+}
+
+.codebox_main .head {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 17.5px 5px 10px;
+    align-items: center;
+    background-color: #060606;
+
+    & .name-icon {
+        display: flex;
+        justify-content: space-between;
+        gap: 8px;
+        align-items: center;
+        max-width: 40px;
+        justify-content: space-between;
+
+        & i {
+            height: 100%;
+            font-size: 18px;
+        }
+
+        & h3 {
+            background-color: #060606;
+        }
+    }
+
+    &>i {
+        cursor: pointer;
+    }
+}
+
+
+.CodeMirror,
+.react-codemirror2 {
+    height: 100% !important;
+}
+
+.codebox_main:not(.codebox_main:last-of-type) .body {
+    padding-right: 15px;
+}
+
+.resize-handle {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15px;
+    height: 100%;
+    cursor: col-resize;
+    background-color: black;
+    border-left: 1px solid var(--darker);
+}
+
+.codebox_main .body {
+    flex: 1;
+    height: 100%;
+    overflow-x: hidden;
+    white-space: normal;
+    word-wrap: break-word;
+    text-wrap: wrap;
+}

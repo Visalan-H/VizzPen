@@ -1,0 +1,10 @@
+.login .form{
+    height: 400px !important;
+}
+
+.login {
+    padding: 50px;
+}
+.login h1{
+    margin: 30px 0;
+}

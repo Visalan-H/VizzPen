@@ -1,0 +1,28 @@
+.main_button{
+    height: 50px;
+    width: 100px;
+    background-color: var(--darker);
+    color: var(--lightest);
+    outline: 0;
+    border: 1px solid var(--darkest);
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.35s ease;
+}
+.main_button i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    font-size: 28px;
+    transition: font-size 0.5s ease-in; 
+}
+.main_button:hover{
+    background-color: var(--lightest);
+    color: var(--darker);
+}
+
+.main_button:hover i{
+    font-size: 42px;
+}

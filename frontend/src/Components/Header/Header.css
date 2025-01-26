@@ -1,0 +1,27 @@
+.header_main {
+    height: 10vh;
+    display: flex;
+    overflow: hidden;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #060606;
+    color: #fafafa;
+    border-bottom: 1px solid var(--medium);
+    transition: height 0.3s;
+}
+
+.header_main .right {
+    flex-basis: 30%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.header_main .left {
+    flex-basis: 30%;
+    margin-left: 30px;
+
+    &>* {
+        cursor: pointer;
+        width: max-content;
+    }
+}

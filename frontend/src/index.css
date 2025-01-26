@@ -1,0 +1,24 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+:root {
+    --darkest: #2f2f2f;
+    --darker: #545454;
+    --medium: #7b7b7b;
+    --lighter: #a5a5a5;
+    --lightest: #d1d1d1;
+}
+
+*:not(iframe){
+    margin: 0;
+    padding: 0;
+    font-family: Inter,system-ui,'sans-serif';
+    box-sizing: border-box;
+}
+body{
+    overflow-x: hidden;
+}
+a{
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    color: #d1d1d1;
+}

@@ -1,0 +1,41 @@
+.loader_main {
+    display: flex;
+    flex-direction: column;
+    height: 100dvh;
+    align-items: center;
+    width: 100%;
+    background-color: black;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    gap: 20px;
+}
+
+h3{
+    font-size: 26px;
+    font-weight: 300;
+}
+
+h3:last-of-type{
+    font-size: 20px;
+}
+
+.bat3 {
+    fill: none;
+    stroke-dasharray: 950px;
+    stroke: white;
+    stroke-width: 5px;
+    animation: load 15s infinite linear;
+    transform: rotateZ(-45deg);
+}
+
+
+@keyframes load {
+    0% {
+        stroke-dashoffset: 0px;
+    }
+
+    100% {
+        stroke-dashoffset: 9500px;
+    }
+}

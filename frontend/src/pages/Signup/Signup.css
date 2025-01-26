@@ -1,0 +1,82 @@
+.main_signup {
+    width: 100vw;
+    min-height: 100vh;
+    background-color: #020202;
+    color: #fdfdfd;
+    padding: 40px 50px 0;
+}
+
+.main_signup h1 {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 64px;
+}
+
+.main_signup .form {
+    width: 60%;
+    box-shadow: 0 0 10px 3px;
+    height: 550px;
+    margin: 0 auto;
+    padding: 30px 40px;
+    background-color: var(--darkest);
+    border: 2px solid white;
+    border-radius: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: space-between;
+}
+
+.main_signup .labelin {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 24px;
+}
+
+.main_signup .labelin input {
+    background-color: #fdfdfd;
+    padding: 16px;
+    border-radius: 8px;
+    outline: 0;
+    border: 2px solid #020202;
+}
+
+.main_signup .labelin input:focus {
+    border: 2px solid #fdfdfd;
+}
+
+.main_signup .labelin label span {
+    font-size: 16px;
+    color: grey;
+}
+
+.main_signup .form button {
+    width: 40%;
+    height: 60px;
+    border-radius: 5px;
+    cursor: pointer;
+    outline: 0;
+    border: 2px solid white;
+    font-size: 24px;
+    letter-spacing: 1px;
+    background-color: #020202;
+    color: #fdfdfd;
+    transition: all 0.4s;
+    justify-self: end;
+}
+
+.main_signup .form button:hover {
+    background-color: #fdfdfd;
+    color: #020202;
+    border: 2px solid black;
+    letter-spacing: 3px;
+}
+.main_signup .buttonandlink{
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-evenly;
+    font-size: 24px;
+}
