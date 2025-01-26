@@ -10,7 +10,8 @@ const Login = () => {
   const [email, setEmail] = useState("")
   const [pass, setPass] = useState("")
 
-  const handleSave = () => {
+  const handleSave = (e) => {
+    e.preventDefault();
     if (!email || !pass) return;
     axios.post(`${import.meta.env.VITE_BASE_URL}/user/login`,
       { email, password: pass },
@@ -24,7 +25,7 @@ const Login = () => {
   return (
     <div className='main_signup login'>
       <h1>Login</h1>
-      <div className="form">
+      <form onSubmit={handleSave} className="form">
         <div className="spacer" style={{ width: "100%", height: "1px" }}></div>
         <div className="labelin">
           <label htmlFor="mail">Email:</label>
@@ -35,10 +36,10 @@ const Login = () => {
           <input value={pass} onChange={(e) => setPass(e.target.value)} type="password" placeholder='Password' id='pass' min={6} required />
         </div>
         <div className='buttonandlink'>
-          <button onClick={handleSave} type='submit'>Submit</button>
+          <button type='submit'>Submit</button>
           <Link to={'/signup'}>New User?</Link>
         </div>
-      </div>
+      </form>
     </div>
   )
 }
