@@ -86,6 +86,7 @@ const Pen = ({ user }) => {
     };
     if (penId) {
       axios.put(`${import.meta.env.VITE_BASE_URL}/pen/${penId}`, { name: name, html: html, css: css, js: js, user: user })
+        .then(() => toast("💖 Pen Saved"))
         .catch(err => console.error(err));
     } else {
       axios.post(`${import.meta.env.VITE_BASE_URL}/pen/add`, { name: name, html: html, css: css, js: js, user: user })
