@@ -1,5 +1,5 @@
 import React, { useState, useRef } from 'react'
-import Editor from '@monaco-editor/react'
+import Editor from '@monaco-editor/react/dist'
 import './CodeBox.css'
 
 const CodeBox = (props) => {
