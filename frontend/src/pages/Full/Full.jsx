@@ -12,7 +12,7 @@ const Full = () => {
 
   useEffect(() => {
     async function meow() {
-      await axios.get(`http://localhost:3000/pen/${id}`)
+      await axios.get(`${import.meta.env.VITE_BASE_URL}/pen/${id}`)
         .then((res) => setPen(res.data))
         .then(() => setLoading(false))
         .catch((err) => console.log(err))

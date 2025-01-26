@@ -3,16 +3,16 @@ import CodeBox from '../../Components/CodeBox/CodeBox'
 import { useState } from 'react'
 import Header from '../../Components/Header/Header'
 import MyIframe from '../../Components/myIframe'
-import {ToastContainer,toast} from 'react-toastify'
+import { ToastContainer, toast } from 'react-toastify'
 import './Pen.css'
-import { useParams,useNavigate } from 'react-router-dom'
+import { useParams, useNavigate } from 'react-router-dom'
 import AbsButton from '../../Components/AbsButton/AbsButton'
 import axios from 'axios'
 
 const Pen = ({ user }) => {
 
   const { id } = useParams();
-  const navigate=useNavigate();
+  const navigate = useNavigate();
   const [headerVisible, setHeaderVisible] = useState(true);
   const [html, setHtml] = useState("");
   const [css, setCss] = useState("");
@@ -34,7 +34,7 @@ const Pen = ({ user }) => {
     const fetchData = async () => {
       if (id) {
         try {
-          const res = await axios.get(`http://localhost:3000/pen/${id}`);
+          const res = await axios.get(`${import.meta.env.VITE_BASE_URL}/pen/${id}`);
           setPen(res.data)
           setHtml(res.data.html);
           setCss(res.data.css);
@@ -73,7 +73,7 @@ const Pen = ({ user }) => {
     const blob = new Blob([fileContent], { type: 'text/html' });
     const link = document.createElement('a');
     link.href = URL.createObjectURL(blob);
-    link.download = `${name}.html`; 
+    link.download = `${name}.html`;
     link.click();
   }
 
@@ -85,14 +85,14 @@ const Pen = ({ user }) => {
       return;
     };
     if (penId) {
-      axios.put(`http://localhost:3000/pen/${penId}`, { name: name, html: html, css: css, js: js, user: user })
+      axios.put(`${import.meta.env.VITE_BASE_URL}/pen/${penId}`, { name: name, html: html, css: css, js: js, user: user })
         .catch(err => console.error(err));
     } else {
-      axios.post('http://localhost:3000/pen/add', { name: name, html: html, css: css, js: js, user: user })
+      axios.post(`${import.meta.env.VITE_BASE_URL}/pen/add`, { name: name, html: html, css: css, js: js, user: user })
         .then(res => {
           setPenId(res.data._id)
         })
-        .then(()=>toast("💖 Pen Saved"))
+        .then(() => toast("💖 Pen Saved"))
     }
   }
   const handleToggle = () => {
@@ -102,13 +102,17 @@ const Pen = ({ user }) => {
     setNameVisible(!nameVisible)
   }
   const handleFullView = () => {
+    if (!id) {
+      toast("Please Save first");
+      return;
+    }
     window.open(`/full/${id}`, '_blank');
   }
 
   const handleMouseDown = (e) => {
     e.preventDefault();
-    const ifr=document.getElementById("bottomiframe")
-    ifr.style.pointerEvents="none";
+    const ifr = document.getElementById("bottomiframe")
+    ifr.style.pointerEvents = "none";
     const startY = e.clientY;
     const startHeight = topRef.current.offsetHeight;
 
@@ -139,7 +143,7 @@ const Pen = ({ user }) => {
       <ToastContainer
         position="top-center"
         autoClose={3000}
-        
+
         hideProgressBar={false}
         newestOnTop={false}
         closeOnClick={false}

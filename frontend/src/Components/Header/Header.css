@@ -25,3 +25,6 @@
         width: max-content;
     }
 }
+.header_main h1{
+    cursor: pointer;
+}

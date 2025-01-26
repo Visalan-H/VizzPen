@@ -11,7 +11,7 @@ export default function ProtectedRoute({ children }) {
     useEffect(() => {
         const checkToken = async () => {
             try {
-                const res = await axios.get(`http://localhost:3000/user/protected`, { withCredentials: true });
+                const res = await axios.get(`${ import.meta.env.VITE_BASE_URL}/user/protected`, { withCredentials: true });
                 setUser(res.data.user);
                 setIsVerified(true);
                 

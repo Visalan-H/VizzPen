@@ -14,7 +14,7 @@ const Signup = () => {
 
     const handleSave = () => {
         if (!name || !email || !pass) return;
-        axios.post('http://localhost:3000/user/signup',
+        axios.post(`${import.meta.env.VITE_BASE_URL}/user/signup`,
             { name, email, password:pass },
             {
                 headers: { "Content-Type": "application/json" },
