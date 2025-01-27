@@ -38,7 +38,7 @@ penRouter.post('/add', srcCreator, async (req, res) => {
 penRouter.put('/:id', async (req, res) => {
     try {
         const { name, penSrc, user, html, css, js } = req.body;
-        const pen = await Pen.findByIdAndUpdate(req.params.id, { name, penSrc, user, html, css, js }, { new: true });
+        const pen = await Pen.findByIdAndUpdate(req.params.id, { name, penSrc, user, html, css, js });
         if (pen) res.status(200).json(pen);
     } catch (error) {
         res.json(error.message)
