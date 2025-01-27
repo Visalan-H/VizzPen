@@ -39,6 +39,7 @@ const Pen = ({ user }) => {
           setHtml(res.data.html);
           setCss(res.data.css);
           setJs(res.data.js);
+          setPenId(res.data._id)
           setName(res.data.name);
         } catch (err) {
           console.error(err);
@@ -91,7 +92,8 @@ const Pen = ({ user }) => {
     } else {
       axios.post(`${import.meta.env.VITE_BASE_URL}/pen/add`, { name: name, html: html, css: css, js: js, user: user })
         .then(res => {
-          setPenId(res.data._id)
+          console.log(res.data);
+          setPenId(res.data._id);
         })
         .then(() => toast("💖 Pen Saved"))
     }
