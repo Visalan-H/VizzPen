@@ -59,6 +59,10 @@ const CodeBox = (props) => {
           options={{
             fontSize: 16,
             autoClosingBrackets: true,
+            autoClosingQuotes: "always",
+            autoClosingOvertype: "always",
+            // autoIndent: "advanced",
+
             matchBrackets: "always",
             minimap: {
               enabled: false
@@ -69,14 +73,19 @@ const CodeBox = (props) => {
               verticalScrollbarSize: 10,
               horizontal: "auto"
             },
+            overviewRulerLanes: 0,
+            renderLineHighlight: "line",
+            lineNumbersMinChars: 3,
+            lineDecorationsWidth: 2,
+            glyphMargin: false,
 
             bracketPairColorization: {
               enabled: true,
               independentColorPoolPerBracketType: true
             },
-            quickSuggestionsFontSize: 20
+            quickSuggestionsFontSize: 20,
           }}
-
+      
         />
       </div>
       {!isLastBox && <div

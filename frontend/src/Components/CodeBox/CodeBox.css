@@ -67,6 +67,9 @@
     text-wrap: wrap;
 }
 
-.monaco-list-rows > *{
+/* .monaco-list-rows > *{
     text-decoration: none !important;
 }
+.editor .decorationsOverviewRuler{
+    border-bottom: none !important;
+} */
