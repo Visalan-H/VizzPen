@@ -13,7 +13,7 @@ const app = express();
 
 app.use(cookieParser())
 app.use(cors(
-    { origin: "https://vizzpen.vercel.app/", credentials: true }
+    { origin: "https://vizzpen.vercel.app", credentials: true }
 ));
 app.use(express.json())
 app.use('/pen', penRouter)
