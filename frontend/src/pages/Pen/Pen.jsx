@@ -23,6 +23,10 @@ const Pen = ({ user }) => {
   const [nameVisible, setNameVisible] = useState(false);
   const [name, setName] = useState('');
   const topRef = useRef();
+  window.addEventListener("beforeunload", (event) => {
+    event.preventDefault();
+    event.returnValue = "";
+  });
 
   useEffect(() => {
     if (penId) {
@@ -126,9 +130,11 @@ const Pen = ({ user }) => {
         setTopHeight(0);
         return;
       }
+
       requestAnimationFrame(() => {
         setTopHeight(`${newHeight}px`);
       })
+
     };
 
     const stopResize = () => {

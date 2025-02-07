@@ -76,7 +76,7 @@
 
 .pens_container {
     width: 100%;
-    border: 1px solid black;
+    /* border: 1px solid black; */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-evenly;
@@ -94,6 +94,7 @@
     gap: 20px;
     border-radius: 12px;
     transition: all 0.3s;
+    position: relative;
 }
 
 .main_home .iframecontainer iframe {
@@ -105,6 +106,7 @@
 
 .main_home .iframecontainer h2 {
     font-size: 30px;
+    background-color: transparent;
 }
 
 .cursor-blur {
@@ -122,10 +124,22 @@
 .main_home .iframecontainer:hover {
     z-index: 1;
     scale: 1.05;
-
 }
 
 .main_home h3 {
     font-size: 36px;
     margin-bottom: 30px;
+}
+
+#del{
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 2000000000;
+    padding: 5px;
+    transition: all 0.3s;
+}
+#del:hover{
+    scale: 2;
+    color: red;
 }
