@@ -90,6 +90,7 @@ const Pen = ({ user }) => {
       return;
     };
     if (penId) {
+      toast("🙏🏻Please wait while we are saving your pen.")
       document.body.style.pointerEvents = "none";
       axios.put(`${import.meta.env.VITE_BASE_URL}/pen/${penId}`, { name: name, html: html, css: css, js: js, user: user })
         .then(() => {
