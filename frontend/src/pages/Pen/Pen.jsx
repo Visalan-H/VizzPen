@@ -90,8 +90,13 @@ const Pen = ({ user }) => {
       return;
     };
     if (penId) {
+      toast("🙏🏻Please wait while we are saving your pen.")
+      document.body.style.pointerEvents = "none";
       axios.put(`${import.meta.env.VITE_BASE_URL}/pen/${penId}`, { name: name, html: html, css: css, js: js, user: user })
-        .then(() => toast("💖 Pen Saved"))
+        .then(() => {
+          toast("💖 Pen Saved");
+          document.body.style.pointerEvents="auto";
+        })
         .catch(err => console.error(err));
     } else {
       axios.post(`${import.meta.env.VITE_BASE_URL}/pen/add`, { name: name, html: html, css: css, js: js, user: user })
