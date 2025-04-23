@@ -24,7 +24,7 @@ userSchema.pre('save', async function (next) {
 userSchema.statics.login = async function (email, password) {
     const user = await this.findOne({ email })
     if (user) {
-        if (compare(password, user.password)) return user;
+        if (await compare(password, user.password)) return user;
         throw new Error('Invalid email or password');
 
     }
