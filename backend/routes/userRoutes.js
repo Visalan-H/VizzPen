@@ -7,12 +7,12 @@ const  decodeToken  = require('../middleware/decodeToken');
 const secretJWTKEY = process.env.SECRET_JWT_KEY;
 
 const makeTokenSetCookie = (res, id) => {
-    const token = jwt.sign({ id }, secretJWTKEY, { expiresIn: '3d' });
+    const token = jwt.sign({ id }, secretJWTKEY, { expiresIn: '90d' });
     res.cookie('jwt', token, {
         httpOnly: true,
         secure: true,
         sameSite: "none",
-        maxAge: 366 * 24 * 60 * 60 * 1000
+        maxAge: 90 * 24 * 60 * 60 * 1000
     });
 }
 
